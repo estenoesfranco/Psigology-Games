@@ -1,4 +1,4 @@
-// Arreglo con las imágenes y sus valores
+// ete e un Arreglo con las imágenes y sus valores tio
 const imagenes = [
     { id: 'imagen1', valor: 1 },
     { id: 'imagen2', valor: 2 },
@@ -34,8 +34,12 @@ function verificarCombinacion() {
         (imagenSeleccionada1 === 1 && imagenSeleccionada2 === 5) ||
         (imagenSeleccionada1 === 2 && imagenSeleccionada2 === 6) ||
         (imagenSeleccionada1 === 3 && imagenSeleccionada2 === 7) ||
-        (imagenSeleccionada1 === 4 && imagenSeleccionada2 === 8)
-    ) {
+        (imagenSeleccionada1 === 4 && imagenSeleccionada2 === 8) ||
+        (imagenSeleccionada1 === 5 && imagenSeleccionada2 === 1) ||
+        (imagenSeleccionada1 === 6 && imagenSeleccionada2 === 2) ||
+        (imagenSeleccionada1 === 7 && imagenSeleccionada2 === 3) ||
+        (imagenSeleccionada1 === 8 && imagenSeleccionada2 === 4) ||
+        (column1ImageSelected == column2ImageSelected)) {
         combinacionesCorrectas++;
         mostrarMensaje(`¡Combinación correcta! (${combinacionesCorrectas} de 4)`);
         if (combinacionesCorrectas === 4) {
@@ -44,10 +48,10 @@ function verificarCombinacion() {
         // Ocultamos las imágenes correctas
         ocultarImagenesCorrectas();
         // Reiniciamos las selecciones para buscar otras combinaciones
-        imagenSeleccionada1 = null;
-        imagenSeleccionada2 = null;
+        imagenSeleccionada1 = 0;
+        imagenSeleccionada2 = 0;
     } else {
-        mostrarMensaje('¡Oh me parece que eso no es correcto!');
+        mostrarMensaje('¡Oh me parece que eso no es correcta tu selección tio!');
     }
 }
 
@@ -85,24 +89,18 @@ const i4C2 = document.getElementById("imagen8");
 function changeSize(variable, boolean) {
     if (boolean) {
         variable.style.filter = "brightness(" + 75 + "%)";
+        if (column1ImageSelected >= 1 && column2ImageSelected >= 1 || column1ImageSelected == column2ImageSelected) {
+            //console.log("¡Combinación correcta!");
+            variable.style.display = 'none';
+            column1ImageSelected = 0;
+            column2ImageSelected = 0;
+        } else {
+            if (column1ImageSelected >= 1 && column2ImageSelected >= 1 || column1ImageSelected != column2ImageSelected) {
+            console.log("¡Oh!, me parece que eso no es correcto.");
+            }
+        }
     } else {
         variable.style.filter = "brightness(" + 100 + "%)";
-    }
-    if (column1ImageSelected >= 1 && column2ImageSelected >= 1) {
-        if (column1ImageSelected == column2ImageSelected) {
-            console.log("¡Combinación correcta!");
-                const imagenesCorrectas = [column1ImageSelected, column1ImageSelected];
-                imagenesCorrectas.forEach((valor) => {
-                    const elemento = document.getElementById(`imagen${valor}`);
-                    //HACER Q SE ELIMINE SOLO LAS IMAGENES SELECCIONADAS, CREO Q SE ELIMINAN TODAS QSY AÚN NO PUDE COMPROBARLO PQ ME ESTOY LLENDO A DORMIR Y NO PUEDO VER LA PÁGINA EN VIVO PQ NO ME PASARON NUNCA EL LINK Y FRANCO NO ESTÁ CONECTADO LOL
-                    elemento.style.display = 'none';});
-                    column1ImageSelected = 0;
-                    column2ImageSelected = 0;
-        } else {
-            console.log("¡Oh!, me parece que eso no es correcto.");
-        }
-        column1ImageSelected = 0;
-        column2ImageSelected = 0;
     }
 }
 
