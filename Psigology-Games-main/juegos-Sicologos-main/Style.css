@@ -1,0 +1,90 @@
+/* Estilos CSS */
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    user-select: none;
+}
+
+.navbar{
+    background: rgb(56,8,73);
+background: radial-gradient(circle, rgba(56,8,73,1) 20%, rgba(70,4,77,1) 51%, rgba(255,0,196,1) 100%);
+  border: solid;
+}
+
+
+
+.fondo {
+    background: rgb(0, 20, 193);
+    background: linear-gradient(90deg, rgba(0, 20, 193, 1) 0%, rgba(141, 7, 223, 1) 37%, rgba(255, 0, 0, 1) 100%);
+}
+
+.IMG_representante {
+    height: 50px;
+    height: 50px;
+    
+}
+
+.Fila1_img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(165, 5, 165, 0.945), 0 0 20px rgb(140, 0, 255),
+        0 0 30px rgba(72, 1, 187, 0.719);
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.Fila1_img:hover {
+    transform: scale(1.1);
+    
+}
+
+.fila1_img.selected {
+    transform: scale(1.2);
+}
+
+.navbar {
+    z-index: 1; 
+}
+
+.container {
+    display: flex;
+    
+    justify-content: space-between;
+}
+
+.Columna{
+
+ display: flex;
+ flex-direction: column;
+}
+
+.Fila2_img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(165, 5, 165, 0.945), 0 0 20px rgb(140, 0, 255),
+        0 0 30px rgba(72, 1, 187, 0.719);
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    margin-left: auto; /* Empuja la imagen hacia la derecha dentro de su contenedor */
+}
+
+.Fila2_img:hover {
+    transform: scale(1.1);
+   
+}
+
+.Fila2_img.selected {
+    transform: scale(1.2);
+}
+
+.imagen {
+    margin: 1rem;
+}
